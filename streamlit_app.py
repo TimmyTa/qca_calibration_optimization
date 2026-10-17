@@ -59,6 +59,12 @@ METRIC_GROUPS = {
     ],
 }
 
+# Thứ tự hiển thị mong muốn cho các mode
+MODE_ORDER = [
+    "oracle", "quantile", "kde", "expert", 
+    "opt", "opt_c6c7", "opt_expert"
+]
+
 
 # =============================================================== helpers ====
 @st.cache_data(show_spinner=False)
@@ -125,7 +131,13 @@ def render_metric_group(df, group_name, metrics, num_cols, expanded=False):
     with st.expander(f"📊 {group_name} ({len(available)} metrics)", expanded=expanded):
         agg = df.groupby("mode")[available].mean(numeric_only=True).round(4)
         agg.insert(0, "datasets", df.groupby("mode").size())
-        agg = agg.reset_index()
+        
+        # Sắp xếp theo MODE_ORDER
+        ordered_modes = [m for m in MODE_ORDER if m in agg.index]
+        # Thêm bất kỳ mode nào không có trong MODE_ORDER vào cuối
+        ordered_modes += [m for m in agg.index if m not in ordered_modes]
+        agg = agg.reindex(ordered_modes).reset_index()
+
         st.dataframe(agg, use_container_width=True, hide_index=True)
 
 
@@ -182,7 +194,11 @@ st.sidebar.markdown("---")
 st.sidebar.subheader("Filters")
 
 modes = sorted(df["mode"].unique())
-sel_modes = st.sidebar.multiselect("Mode", modes, default=modes, key="f_mode")
+# Sắp xếp danh sách filter theo MODE_ORDER để dễ nhìn
+ordered_filter_modes = [m for m in MODE_ORDER if m in modes]
+ordered_filter_modes += [m for m in modes if m not in ordered_filter_modes]
+
+sel_modes = st.sidebar.multiselect("Mode", ordered_filter_modes, default=ordered_filter_modes, key="f_mode")
 
 ns = sorted(df["n"].unique()) if "n" in df else []
 sel_n = st.sidebar.multiselect("n", ns, default=ns, key="f_n") if ns else []
@@ -291,6 +307,11 @@ with tabs[0]:
     if sel_metrics:
         bar_metric = st.selectbox("Metric", sel_metrics, key="summary_bar_metric")
         agg_long = df_f.groupby("mode")[bar_metric].mean().reset_index()
+        
+        # Sắp xếp theo MODE_ORDER
+        agg_long["mode"] = pd.Categorical(agg_long["mode"], categories=MODE_ORDER, ordered=True)
+        agg_long = agg_long.sort_values("mode")
+
         fig = px.bar(agg_long, x="mode", y=bar_metric, color="mode",
                      title=f"{bar_metric} — mean per mode")
         st.plotly_chart(fig, use_container_width=True)
@@ -310,11 +331,22 @@ with tabs[1]:
                 index="mode", columns=group_cols,
                 values=cmp_metric, aggfunc="mean",
             ).round(3)
+            
+            # Sắp xếp theo MODE_ORDER
+            ordered_idx = [m for m in MODE_ORDER if m in piv.index]
+            ordered_idx += [m for m in piv.index if m not in ordered_idx]
+            piv = piv.reindex(ordered_idx)
+
             if "fuzz_id" in group_cols:
                 piv = piv.rename(columns={f: fuzz_label(f, fuzz_map) for f in piv.columns})
             st.dataframe(piv, use_container_width=True)
 
-        fig = px.box(df_f, x="mode", y=cmp_metric, color="mode",
+        # Boxplot - Plotly tự động sắp xếp theo category
+        plot_df = df_f.copy()
+        plot_df["mode"] = pd.Categorical(plot_df["mode"], categories=MODE_ORDER, ordered=True)
+        plot_df = plot_df.sort_values("mode")
+
+        fig = px.box(plot_df, x="mode", y=cmp_metric, color="mode",
                      title=f"{cmp_metric} distribution by mode")
         st.plotly_chart(fig, use_container_width=True)
 
@@ -350,6 +382,11 @@ with tabs[2]:
             trend_x = "fuzzvalues"
         if trend_color == "fuzz_id":
             trend_color = "fuzzvalues"
+
+        # Nếu color là mode, sắp xếp lại để legend hiển thị đúng thứ tự
+        if trend_color == "mode":
+            plot_df["mode"] = pd.Categorical(plot_df["mode"], categories=MODE_ORDER, ordered=True)
+            plot_df = plot_df.sort_values("mode")
 
         kwargs = dict(
             data_frame=plot_df, x=trend_x, y=trend_metric,
@@ -411,6 +448,12 @@ with tabs[4]:
             plot_df["fuzzvalues"] = plot_df["fuzz_id"].map(lambda x: fuzz_label(x, fuzz_map))
         if scat_color == "fuzz_id":
             scat_color = "fuzzvalues"
+
+        # Nếu color là mode, sắp xếp lại để legend hiển thị đúng thứ tự
+        if scat_color == "mode":
+            plot_df["mode"] = pd.Categorical(plot_df["mode"], categories=MODE_ORDER, ordered=True)
+            plot_df = plot_df.sort_values("mode")
+
         fig = px.scatter(
             plot_df, x=scat_x, y=scat_y, color=scat_color,
             hover_data=[c for c in ["dataset", "n", "noise", "frag", "fuzz_id"] if c in plot_df.columns],
@@ -431,7 +474,11 @@ with tabs[5]:
         cmp_path = ds_dir / "compare.csv"
         if cmp_path.exists():
             st.markdown("### compare.csv")
-            st.dataframe(load_csv(cmp_path), use_container_width=True)
+            c_df = load_csv(cmp_path)
+            if "mode" in c_df.columns:
+                c_df["mode"] = pd.Categorical(c_df["mode"], categories=MODE_ORDER, ordered=True)
+                c_df = c_df.sort_values("mode")
+            st.dataframe(c_df, use_container_width=True)
 
         md_path = ds_dir / "compare.md"
         if md_path.exists():
@@ -452,7 +499,10 @@ with tabs[5]:
         if modes_dir.exists():
             mode_names = sorted([p.name for p in modes_dir.iterdir() if p.is_dir()])
             if mode_names:
-                m = st.selectbox("Mode", mode_names, key="ds_mode")
+                ordered_mode_names = [m for m in MODE_ORDER if m in mode_names]
+                ordered_mode_names += [m for m in mode_names if m not in ordered_mode_names]
+                
+                m = st.selectbox("Mode", ordered_mode_names, key="ds_mode")
                 m_dir = modes_dir / m
                 c1, c2 = st.columns(2)
                 with c1:
