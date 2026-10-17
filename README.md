@@ -72,6 +72,7 @@ python3 run_experiment.py --config configs/experiment.json                 # one
 python3 run_experiment.py --config configs/experiment.json --grid          # grid
 python3 run_experiment.py --resume results/grid_demo_<timestamp>           # continue
 python3 anchor_optimization.py configs/template.json                       # real data
+streamlit run streamlit_app.py                       # view demo result
 ```
 
 See [HOW_TO_RUN.md](HOW_TO_RUN.md).
