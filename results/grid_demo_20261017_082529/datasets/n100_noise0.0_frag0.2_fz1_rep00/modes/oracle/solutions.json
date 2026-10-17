@@ -1,0 +1,24 @@
+{
+  "conservative": [
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*E*F+A*B*d*e*F+A*B*d*E*f+A*B*D*e*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*E*F+A*B*d*E*f+A*B*D*e*f+A*B*c*e*F+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*D*F+A*B*d*e*F+A*B*d*E*f+A*B*D*e*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*D*F+A*B*d*E*f+A*B*D*e*f+A*B*c*e*F+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*E*F+A*B*d*e*F+A*B*d*E*f+A*B*C*e*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*E*F+A*C*D*e*f+A*B*d*e*F+A*B*d*E*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*b*C*D*e+a*B*c*E*F+A*C*D*e*f+A*B*d*e*F+A*B*d*E*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*E*F+A*B*d*E*f+A*B*c*e*F+A*B*C*e*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*E*F+A*C*D*e*f+A*B*d*E*f+A*B*c*e*F+A*B*C*E*F<->G",
+    "b*c*D*E*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*b*C*D*e+a*B*c*E*F+A*C*D*e*f+A*B*d*E*f+A*B*c*e*F+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*D*F+A*B*d*e*F+A*B*d*E*f+A*B*C*e*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*D*F+A*C*D*e*f+A*B*d*e*F+A*B*d*E*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*b*C*D*e+a*B*c*D*F+A*C*D*e*f+A*B*d*e*F+A*B*d*E*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*D*F+A*B*d*E*f+A*B*c*e*F+A*B*C*e*f+A*B*C*E*F<->G",
+    "b*c*D*E*f+b*C*D*e*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*B*c*D*F+A*C*D*e*f+A*B*d*E*f+A*B*c*e*F+A*B*C*E*F<->G",
+    "b*c*D*E*f+B*c*D*e+B*C*d*e+a*d*E*F+a*D*e*F+a*b*C*d*E+a*b*C*D*e+a*B*c*D*F+A*C*D*e*f+A*B*d*E*f+A*B*c*e*F+A*B*C*E*F<->G"
+  ],
+  "parsimonious": [
+    "F+E+D+B*C<->G"
+  ],
+  "truncated": false
+}

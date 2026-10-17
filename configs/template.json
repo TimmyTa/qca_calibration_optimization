@@ -1,0 +1,47 @@
+{
+  "_description": "Run anchor_optimization.py on your own data: python3 anchor_optimization.py configs/my_study.json. Keys starting with '_' are ignored.",
+  "data": "path/to/data.csv",
+  "_data": "CSV or XLSX, one row per case.",
+  "id_column": "",
+  "_id_column": "Optional column with case names.",
+  "conditions": [
+    "COND1",
+    "COND2",
+    "COND3"
+  ],
+  "outcome": "OUTCOME",
+  "columns": {},
+  "_columns": "Optional {short name: column name in the file}.",
+  "outcome_anchor": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "_outcome_anchor": "Fixed (e, c, i) of the outcome, raw units. Never optimized.",
+  "theory_anchors": {},
+  "_theory_anchors": "Optional {condition: [e, c, i]} from theory / the literature: reported next to the optimized anchors; used as a start point if params.init contains 'theory', as the reference if params.reference = 'theory'.",
+  "expert_intervals": {},
+  "_expert_intervals": "Optional {condition: [lo, hi]} in raw units: the crossover is only searched inside.",
+  "qca_rule": "conventional",
+  "_qca_rule": "'conventional' (n.cut from the data, incl .80, PRI .50), 'data_driven', or {\"nu\": \"auto\" | int, \"tau\": .., \"pi\": ..}.",
+  "params": {
+    "L": 3.0,
+    "min_side": 0.2,
+    "crisp_tol": 0.0,
+    "lambda": 0.0,
+    "reference": "kde",
+    "init": [
+      "kde",
+      "center"
+    ],
+    "de": {
+      "pop": 60,
+      "generations": 150,
+      "F": 0.7,
+      "CR": 0.9
+    }
+  },
+  "_params": "Overrides of DEFAULTS in anchor_optimization.py. min_side = C6, crisp_tol = C7 (< 0 = off).",
+  "n_seeds": 5,
+  "out_dir": "output"
+}

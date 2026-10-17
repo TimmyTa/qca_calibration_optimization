@@ -1,0 +1,9 @@
+{
+  "conservative": [
+    "b*d*E*f+A*b*d*E+A*b*c*E*f<->G"
+  ],
+  "parsimonious": [
+    "b*E<->G"
+  ],
+  "truncated": false
+}

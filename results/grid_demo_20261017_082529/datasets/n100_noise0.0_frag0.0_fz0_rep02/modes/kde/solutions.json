@@ -1,0 +1,41 @@
+{
+  "conservative": [
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*c*E*F+A*b*E*f+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*c*E*F+A*b*E*f+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*c*E*F+A*b*E*f+A*b*D*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*c*E*F+A*b*E*f+A*b*D*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*D*E*F+A*c*E*F+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*D*E*F+A*c*E*F+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*c*E*F+A*b*D*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*c*E*F+A*b*D*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*c*d*E+A*b*E*f+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*b*E*f+A*b*c*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*c*d*E+A*b*E*f+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*b*E*f+A*b*c*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*c*d*E+A*b*E*f+A*b*D*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*b*E*f+A*b*D*E+A*b*c*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*c*d*E+A*b*E*f+A*b*D*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*b*E*f+A*b*D*E+A*b*c*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*D*E*F+A*c*d*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*D*E*F+A*b*c*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*D*E*F+A*c*d*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*D*E*F+A*b*c*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*c*d*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*b*c*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*c*d*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*D*E*F+A*b*c*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*c*d*E+A*b*D*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*b*D*E+A*b*c*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*c*d*E+A*b*D*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*d*E*f+A*b*D*E+A*b*c*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*c*d*E+A*b*D*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*b*D*E+A*b*c*E+A*b*C*e*F+A*B*d*f+A*B*d*E+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*c*d*E+A*b*D*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G",
+    "b*D*E*f+b*C*E*f+B*c*d*E*f+B*C*D*E*F+a*b*C*d*E+a*B*C*d*e*F+A*b*D*E+A*b*c*E+A*b*C*e*F+A*B*E*F+A*B*d*f+A*B*c*D*F<->G"
+  ],
+  "parsimonious": [
+    "c*E+C*F+b*E+A*B<->G",
+    "d*E+C*F+b*E+A*B<->G"
+  ],
+  "truncated": false
+}
