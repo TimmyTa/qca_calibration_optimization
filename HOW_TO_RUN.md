@@ -115,6 +115,15 @@ solutions. It writes `comparison.csv`, `anchors_optimized.csv` and `seeds.csv` t
 Case study: `python3 anchor_optimization.py configs/meurer2025.json` (set `"data"` to the
 path of their `data.xlsx`).
 
+
+## 5.2  CNA Test
+```bash
+  python cna_test.py results/grid_demo_<timestamp>
+  python cna_test.py results/grid_demo_<timestamp> --mode opt --con 0.75 --cov 0.70 --max-secs 30
+  python cna_test.py results/grid_demo_<timestamp> --fit-only      # only true_con / true_cov (fast)
+
+```
+
 ## 6. View results (Streamlit GUI)
 
 Visualise grid results interactively — no need to open CSV files by hand.
