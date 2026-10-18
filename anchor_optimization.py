@@ -115,7 +115,7 @@ def rule_from_reference(X, y_raw, outcome_anchor, L, quantiles=(0.05, 0.50, 0.95
     if spec == "data_driven":
         return dd
     if spec == "conventional":
-        return {"nu": dd["nu"], "tau": 0.80, "pi": 0.50}
+        return {"nu": dd["nu"], "tau": 0.80, "pi": 0.70}
     return {"nu": dd["nu"] if spec.get("nu", "auto") == "auto" else int(spec["nu"]),
             "tau": float(spec["tau"]), "pi": float(spec["pi"])}
 
