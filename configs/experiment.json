@@ -7,10 +7,11 @@
     "mode": "template",
     "noise": 0.1,
     "frag": 0.0,
+    "shape": 1.0,
     "seed": 42,
     "fuzzvalues": "seq(0, 0.2, 0.01)"
   },
-  "_simulation": "One dataset (run without --grid). mode: template | concov (then also con, cov). fuzzvalues: makeFuzzy noise; larger values push memberships toward .5 and lower PRI of the true rows (0.2 clean, 0.4 hard); keep <= 0.45.",
+  "_simulation": "One dataset (run without --grid). mode: meaningful (simulate_meaningful.py, pure Python: outcome = fuzzy min/max satisfaction of the asf + N(0, noise); frag = share of the 2^k crisp configurations never observed; shape = Beta(shape, shape) condition memberships, 1 = uniform, < 1 toward 0/1; fuzzvalues ignored and the grid's fuzzvalues dimension is skipped) | template | concov (simulate_qca_cna.py via R cna; concov also takes con, cov). fuzzvalues (template/concov only): makeFuzzy noise; larger values push memberships toward .5 and lower PRI of the true rows (0.2 clean, 0.4 hard); keep <= 0.45.",
   "grid": {
     "n": [
       100,
@@ -35,7 +36,7 @@
   },
   "_grid": "Every n x noise x frag x fuzzvalues x rep (with --grid).",
   "qca_rule": "conventional",
-  "_qca_rule": "OUT rule used by the optimizer AND for scoring every mode, computed once per dataset from the raw data: 'conventional' (n.cut keeps >= 80% of cases, incl >= .80, PRI >= .50), 'data_driven' (n.cut, incl, PRI from gaps in the data), or {\"nu\": \"auto\" | int, \"tau\": .., \"pi\": ..}.",
+  "_qca_rule": "OUT rule used by the optimizer AND for scoring every mode, computed once per dataset from the raw data: 'conventional' (n.cut keeps >= 80% of cases, incl >= .80, PRI >= .70), 'data_driven' (n.cut, incl, PRI from gaps in the data), or {\"nu\": \"auto\" | int, \"tau\": .., \"pi\": ..}.",
   "expert": {
     "error": 0.1
   },

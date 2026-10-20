@@ -79,7 +79,7 @@ With the default config, one dataset takes about 2–4 CPU-minutes.
 |---|---|
 | `simulation` | One dataset: `n`, `k`, `mode` (template / concov), `noise`, `frag`, `seed`, `fuzzvalues`. |
 | `grid` | Lists for `n`, `noise`, `frag`, `fuzzvalues`; `reps`; `seed_base`. |
-| `qca_rule` | OUT rule used by the optimizer **and** for scoring every mode: `"conventional"` (n.cut from the data, incl ≥ .80, PRI ≥ .50), `"data_driven"`, or `{"nu": "auto"/int, "tau": .., "pi": ..}`. |
+| `qca_rule` | OUT rule used by the optimizer **and** for scoring every mode: `"conventional"` (n.cut from the data, incl ≥ .80, PRI ≥ .70), `"data_driven"`, or `{"nu": "auto"/int, "tau": .., "pi": ..}`. |
 | `expert.error` | Error of the simulated expert. |
 | `optimize_seeds` | Solver seeds per optimize mode (overridable per mode with `n_seeds`). |
 | `workers` | Parallel processes (default: all cores). |

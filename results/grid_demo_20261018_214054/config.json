@@ -1,0 +1,116 @@
+{
+  "experiment_name": "demo",
+  "simulation": {
+    "n": 150,
+    "k": 6,
+    "mode": "template",
+    "noise": 0.1,
+    "frag": 0.0,
+    "shape": 1.0,
+    "seed": 42,
+    "fuzzvalues": "seq(0, 0.2, 0.01)"
+  },
+  "grid": {
+    "n": [
+      100,
+      200,
+      400
+    ],
+    "noise": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "frag": [
+      0.0,
+      0.2
+    ],
+    "fuzzvalues": [
+      "seq(0, 0.2, 0.01)",
+      "seq(0, 0.45, 0.01)"
+    ],
+    "reps": 3,
+    "seed_base": 1000
+  },
+  "qca_rule": "conventional",
+  "expert": {
+    "error": 0.1
+  },
+  "optimize_seeds": 3,
+  "workers": null,
+  "modes": [
+    {
+      "name": "oracle",
+      "mode": "oracle"
+    },
+    {
+      "name": "quantile",
+      "mode": "quantile"
+    },
+    {
+      "name": "kde",
+      "mode": "kde"
+    },
+    {
+      "name": "expert",
+      "mode": "expert"
+    },
+    {
+      "name": "opt",
+      "mode": "optimize"
+    },
+    {
+      "name": "opt_c6c7",
+      "mode": "optimize",
+      "params": {
+        "min_side": 0.2,
+        "crisp_tol": 0.0
+      }
+    },
+    {
+      "name": "opt_expert",
+      "mode": "optimize",
+      "params": {
+        "min_side": 0.2,
+        "crisp_tol": 0.0
+      },
+      "expert": "noisy",
+      "expert_box": 0.2
+    }
+  ],
+  "params": {
+    "L": 3.0,
+    "B": 200,
+    "bootstrap_seed": 12345,
+    "delta": 0.05,
+    "cons_floor": 0.8,
+    "cov_floor": 0.5,
+    "share_min": 0.3,
+    "share_max": 0.7,
+    "min_positive_rows": 2,
+    "min_side": 0.0,
+    "crisp_tol": -1.0,
+    "max_crisp": 0.0,
+    "lambda": 0.0,
+    "omega": 1.0,
+    "reference": "kde",
+    "init": [
+      "kde",
+      "center"
+    ],
+    "de": {
+      "pop": 60,
+      "generations": 150,
+      "F": 0.7,
+      "CR": 0.9
+    },
+    "profile_generations": 40,
+    "quantile_anchors": [
+      0.05,
+      0.5,
+      0.95
+    ],
+    "max_qmc_checks": 200000
+  },
+  "_grid_run": true
+}

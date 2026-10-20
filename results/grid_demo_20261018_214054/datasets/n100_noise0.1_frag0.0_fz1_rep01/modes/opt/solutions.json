@@ -1,0 +1,26 @@
+{
+  "conservative": [
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*b*d*E*F+A*b*C*d*E+A*B*c*d*E+A*B*c*D*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*C*d*E*f+A*b*d*E*F+A*B*c*d*E+A*B*c*D*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*b*d*E*F+A*b*C*d*E+A*B*d*E*f+A*B*c*E*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*b*d*E*F+A*b*C*d*E+A*B*c*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*C*d*E*f+A*b*d*E*F+A*B*d*E*f+A*B*c*E*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*C*d*E*f+A*b*d*E*F+A*B*c*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*b*d*E*F+A*b*C*d*E+A*B*D*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*E*f+A*B*C*d*f<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*C*d*E*f+A*b*d*E*F+A*B*D*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*E*f+A*B*C*d*f<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*b*d*E*F+A*b*C*d*E+A*B*D*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*C*d*E*f+A*b*d*E*F+A*B*D*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*d*E*f+A*B*c*D*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*c*d*E+A*B*c*D*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*d*E*f+A*B*c*E*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*c*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*d*E*f+A*B*D*E*F+A*B*c*D*e+A*B*C*E*f+A*B*C*d*f<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*D*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*E*f+A*B*C*d*f<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*d*E*f+A*B*D*E*F+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G",
+    "a*B*c*d*e*f+a*B*C*d*E*F+a*B*C*D*e*f+A*c*d*E*F+A*b*C*d*E+A*B*D*E*F+A*B*c*d*E+A*B*c*D*e+A*B*C*d*f+A*B*C*D*E<->G"
+  ],
+  "parsimonious": [
+    "C*E+B*e*f+A*E+A*c*D<->G"
+  ],
+  "truncated": false
+}

@@ -23,7 +23,7 @@
   "expert_intervals": {},
   "_expert_intervals": "Optional {condition: [lo, hi]} in raw units: the crossover is only searched inside.",
   "qca_rule": "conventional",
-  "_qca_rule": "'conventional' (n.cut from the data, incl .80, PRI .50), 'data_driven', or {\"nu\": \"auto\" | int, \"tau\": .., \"pi\": ..}.",
+  "_qca_rule": "'conventional' (n.cut from the data, incl .80, PRI .70), 'data_driven', or {\"nu\": \"auto\" | int, \"tau\": .., \"pi\": ..}.",
   "params": {
     "L": 3.0,
     "min_side": 0.2,

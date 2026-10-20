@@ -1,0 +1,87 @@
+{
+  "asf": "a*e*F+d*C+e*c<->G",
+  "outcome": "G",
+  "conditions": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "relevant": [
+    "A",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "irrelevant": [
+    "B"
+  ],
+  "omitted_relevant": null,
+  "anchors_exclusion_crossover_inclusion": {
+    "A": [
+      18.717,
+      27.48,
+      50.798
+    ],
+    "B": [
+      61.857,
+      75.104,
+      96.665
+    ],
+    "C": [
+      43.481,
+      57.591,
+      77.531
+    ],
+    "D": [
+      41.783,
+      48.253,
+      69.527
+    ],
+    "E": [
+      46.56,
+      69.198,
+      79.619
+    ],
+    "F": [
+      23.082,
+      45.784,
+      58.902
+    ],
+    "G": [
+      23.729,
+      38.608,
+      51.987
+    ]
+  },
+  "design": {
+    "mode": "template",
+    "noise": 0.1,
+    "fragmentation": 0.2,
+    "ideal_configs": 64,
+    "kept_configs": 51,
+    "noise_cases": 40
+  },
+  "actual_con_cov": [
+    0.8214,
+    0.8018
+  ],
+  "fuzzvalues": "seq(0, 0.45, 0.01)",
+  "n": 400,
+  "seed": 32002,
+  "simulation": {
+    "n": 400,
+    "k": 6,
+    "mode": "template",
+    "noise": 0.1,
+    "frag": 0.2,
+    "shape": 1.0,
+    "seed": 32002,
+    "fuzzvalues": "seq(0, 0.45, 0.01)",
+    "fuzz_id": 1,
+    "rep": 2
+  }
+}

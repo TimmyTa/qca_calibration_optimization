@@ -1,7 +1,8 @@
 """
 run_experiment -- simulation study for calibration-anchor optimization, scored with QCA.
 
-  step 1  generate datasets            simulate_qca_cna.simulate (R package cna, main process)
+  step 1  generate datasets            simulation.mode = "meaningful": simulate_meaningful.simulate (pure Python)
+                                       otherwise: simulate_qca_cna.simulate (R package cna, main process)
   step 2  for every dataset, in parallel worker processes (pure Python):
             OUT rule (data-driven from the raw data, or fixed) -- same for every mode
             every anchor mode in the config: oracle / quantile / kde / expert / optimize
@@ -61,6 +62,8 @@ def dataset_list(cfg, grid):
         return [(f"n{s['n']}_noise{s['noise']}_frag{s['frag']}_seed{s['seed']}", dict(s))]
     g = cfg["grid"]
     fuzz = g.get("fuzzvalues", [base.get("fuzzvalues", "seq(0, 0.4, 0.01)")])
+    if base.get("mode") == "meaningful":            # no makeFuzzy: a fuzz dimension would only add reps
+        fuzz = [None]
     settings = [(n, nz, fr, fz) for n in g.get("n", [base["n"]]) for nz in g.get("noise", [base["noise"]])
                 for fr in g.get("frag", [base["frag"]]) for fz in range(len(fuzz))]
     out = []
@@ -72,17 +75,23 @@ def dataset_list(cfg, grid):
     return out
 
 
-def generate(datasets, root):
-    """Write data/ for every dataset that does not have it yet (needs R + cna)."""
+def generate(datasets, root, L):
+    """Write data/ for every dataset that does not have it yet
+    (mode "meaningful": pure Python; other modes need R + cna)."""
     todo = [(n, s) for n, s in datasets if not os.path.exists(os.path.join(root, n, "data", "truth.json"))]
     if not todo:
         return
-    import simulate_qca_cna as sim
     for j, (name, s) in enumerate(todo, 1):
-        sim.FUZZVALUES = s.get("fuzzvalues", sim.FUZZVALUES)
-        kw = {k: s[k] for k in ("n", "k", "mode", "noise", "frag", "seed") if k in s}
-        if s.get("mode") == "concov":
-            kw.update(con=s.get("con", 0.85), cov=s.get("cov", 0.85))
+        if s.get("mode") == "meaningful":
+            import simulate_meaningful as sim
+            kw = {k: s[k] for k in ("n", "k", "mode", "noise", "frag", "shape", "seed") if k in s}
+            kw["L"] = L                                 # data generated with the L used for scoring
+        else:
+            import simulate_qca_cna as sim
+            sim.FUZZVALUES = s.get("fuzzvalues", sim.FUZZVALUES)
+            kw = {k: s[k] for k in ("n", "k", "mode", "noise", "frag", "seed") if k in s}
+            if s.get("mode") == "concov":
+                kw.update(con=s.get("con", 0.85), cov=s.get("cov", 0.85))
         raw, mem, truth = sim.simulate(**kw)
         d = os.path.join(root, name, "data")
         os.makedirs(d, exist_ok=True)
@@ -333,10 +342,11 @@ def main():
         cfg["params"] = ao.merge_params(cfg.get("params", {}))
         save_json(cfg, os.path.join(root, "config.json"))
     workers = a.workers or cfg.get("workers") or max(1, (os.cpu_count() or 2) - 0)
+    workers = 8
     print("output:", root, flush=True)
 
     datasets = dataset_list(cfg, grid)
-    generate(datasets, os.path.join(root, "datasets"))
+    generate(datasets, os.path.join(root, "datasets"), cfg["params"]["L"])
     todo = [(os.path.join(root, "datasets", n), cfg) for n, _ in datasets
             if not os.path.exists(os.path.join(root, "datasets", n, "compare.csv"))]
     print(f"{len(datasets)} datasets, {len(todo)} to run, {len(cfg['modes'])} modes, {workers} workers", flush=True)

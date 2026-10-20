@@ -1,0 +1,14 @@
+{
+  "conservative": [
+    "b*C*d*E+a*B*d*e*F+a*B*C*d+A*b*C*d*F+A*B*c*d*E*f+A*B*c*D*e*F<->G"
+  ],
+  "parsimonious": [
+    "c*d*f+b*C*d*E+B*c*e+a*B*C*d+A*b*d*e*F<->G",
+    "b*C*d*E+B*c*f+B*c*e+a*B*C*d+A*b*d*e*F<->G",
+    "c*d*f+b*C*d*E+B*c*e+a*B*C*d+A*b*C*d*F<->G",
+    "b*C*d*E+B*c*f+B*c*e+a*B*C*d+A*b*C*d*F<->G",
+    "c*d*f+b*C*d*E+B*c*e+a*B*C*d+A*b*C*e*F<->G",
+    "b*C*d*E+B*c*f+B*c*e+a*B*C*d+A*b*C*e*F<->G"
+  ],
+  "truncated": false
+}

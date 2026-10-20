@@ -109,7 +109,7 @@ The OUT rule is an analyst's choice, and it must never be tuned with the ground 
 `rule_from_reference` computes it from the raw data, using the KDE reference anchors:
 
 - `"conventional"` (default): n.cut = the largest frequency threshold that keeps ≥ 80%
-  of cases; incl ≥ 0.80; PRI ≥ 0.50.
+  of cases; incl ≥ 0.80; PRI ≥ 0.70.
 - `"data_driven"`: n.cut as above; incl and PRI at the middle of the largest gap in the
   row values within [.75, .90] and [.50, .75].
 - Fixed values, e.g. `{"nu": 2, "tau": 0.85, "pi": 0.60}` (Meurer et al.).
